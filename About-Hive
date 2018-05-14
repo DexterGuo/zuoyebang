@@ -18,6 +18,43 @@ Related projects
   2. Apache Hivemall: is a scalable machine learning library for Apache Hive, Apache Spark, and Apache Pig.
   3. Apache Sentry: is a role-based authorization system for Apache Hive.
 
-
+Data Units:( in the order of granularity - Hive data is organized into):
+  1. Databases: Namespaces function to avoid naming conflicts for tables, views, partitions, and so on. Databases can also be used to enforce security for a user or group of users.
+  2. Tables: Homogeneous units of data which have the same schma. An example of a table could be page_views table, where each row could comprise of the following columns(Schema).
+    a. timestamp, INT type.
+    b. userid, BIGINT, the identifies the user who viewed the page.
+    c. page_url, STRING, location of the page.
+    d. referer_url, STRING, location of the page from where the user arrived at the current page.
+    e. IP, STRING, thr IP address from where the user arrived at the current page.
+  3. Partitions(分区), Each Table can have one or more partition keys which determines how the data is stored. 
+  4. Buckets or Clusters: Data is each partition may in turn be divided into Buckets based on the value of a hash function of some column of the Table. These can be used to efficiently sample the data.
+  
+Type System: Hive supports primitive and complex data types, as described below.
+  Primitive Type
+    Integers
+      TINYINT 1byte integer
+      SMALLINT  2 byte integer
+      INT 4 byte integer
+      BIGINT 8byte integer
+    Boolean type
+      TRUE/FALSE
+    Floating point numbers
+      FLOAT single precision
+      DOUBLE Double precision
+    Fixed point numbers
+      DECIMAL a fixed point value of user defined scale and precision
+    String 
+      STRING  sequence of characters in a specified character set
+      VARCHAR sequence of characters in a specified character set with a maximum length
+      CHAR sequence of characters in a specified chacter set with a defined length
+    Data and time type
+      TIMESTAMP a specific point in time, up to nanosecond precision
+      DATE a date
+    Binary  a sequence of bytes
+  Complex Types: complex types can be  built up from primitive types and other composite types uding:
+    Structs: the elements within the type can be accessed using the DOT(.) notation.
+    Maps(key-value tuples).
+    Arrays.
+    
 
 
