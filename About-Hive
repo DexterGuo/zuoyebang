@@ -1,0 +1,23 @@
+The Apache Hive data warehouse software facilitates reading, writing, ans managing large datasets residubg ub dustributed and queried using SQL syntax.
+
+CAN:Built on the top of Apache Hadoop, Hive provides the following features:
+  1. Tools to enable easy access to data via SQL, thus enabling data warehousing tasks such as extract/transform/load(ETL), reporting ans data analysis.
+  2. A mechanism to impose structure on a varity of data formats.
+  3. Access to files stored either directly in Apache HDFS or in the data storage systems such as Apache HBase.
+  4. Query execution via Apache Tez, Aoache Spark, or MapReduce.
+  5. Procedural language with HPL-SQL.
+  6. Sub-second query retrieval via Hive LLAP, Apache YARN and Apache Slider.
+CAN/CANNOT: Hive is not designed for online transaction processing, It is best used for traditional data warehousing tasks.
+  
+Components of Hive include HCatalog and WebHCat.
+  1. HCatalog is a component of Hive, It is table and storage management layer for Hadoop that enables users with different data processing tools--including Pig and MapReduce--to more easily read and write data on the grid.
+  2. WebHCat provides a service that you can use to run Hadoop MapReduce (or YARN), Pig, Hive jobs or perform Hive metadata operations using an HTTP interface.
+  
+Related projects
+  1. Shark: us a fork of Apache Hive that uses Spark in place of MapReduce.
+  2. Apache Hivemall: is a scalable machine learning library for Apache Hive, Apache Spark, and Apache Pig.
+  3. Apache Sentry: is a role-based authorization system for Apache Hive.
+
+
+
+
