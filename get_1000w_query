@@ -3,12 +3,15 @@
 import sys
 
 while True:
-	strLine = sys.stdin.readline()
-	if strLine == "":
-		break
-	arrFields = strLine.strip('\n').replace("\x01", "\t").split('\t')
-	if len(arrFields) == 3: #sid, pid, ext
-    ext_str = ""
-		for ext_info in ext:
-      ext_str += ext_info + "@"
-		sys.stdout.write("%s\t%s\t%s\n"%(sid, pid, ext_str))
+    strLine = sys.stdin.readline()
+    if strLine == "":
+        break
+    arrFields = strLine.strip('\n').replace("\x01", "\t").split('\t')
+    if len(arrFields) == 3: #sid, pid, ext
+        ext_str = ""
+        ext_ocr = ext["ocrResult"]["ret"]
+        for ext_info in ext_ocr:
+            ext_str += "@" + ext_info["word"]
+        if not ext_str:
+            ext_str = ext_str[1:]
+        sys.stdout.write("%s\t%s\t%s\n"%(sid, pid, ext_str))
